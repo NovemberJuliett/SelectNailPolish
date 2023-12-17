@@ -21,4 +21,10 @@ def get_random_image(folder_path):
         break
 
 
-get_random_image("C:\Фото\Ногти\WORK")
+def get_random_image_from_folder(folder_path):
+    items = os.listdir(folder_path)
+    random_item = random.choice(items)
+    item_path = os.path.join(folder_path, random_item)
+    get_random_image(item_path)
+
+get_random_image_from_folder("C:\Фото\Test")
